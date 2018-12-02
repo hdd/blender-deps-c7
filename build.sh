@@ -3,6 +3,7 @@
 cd $HOME/blender-git/blender && git pull
 
 for i in /tmp/patches/* ; do
+    echo "applying" "$i"
     patch -p1 < "$i"
 done
 
