@@ -1,0 +1,12 @@
+diff --git a/source/creator/CMakeLists.txt b/source/creator/CMakeLists.txt
+index fb02a7c871c..9e338b90a86 100644
+--- a/source/creator/CMakeLists.txt
++++ b/source/creator/CMakeLists.txt
+@@ -865,7 +865,6 @@ elseif(APPLE)
+ 			PATTERN "__MACOSX" EXCLUDE
+ 			PATTERN ".DS_Store" EXCLUDE
+ 			PATTERN "config-${PYTHON_VERSION}m/*.a" EXCLUDE  # static lib
+-			PATTERN "lib2to3" EXCLUDE                   # ./lib2to3
+ 			PATTERN "tkinter" EXCLUDE                   # ./tkinter
+ 			PATTERN "lib-dynload/_tkinter.*" EXCLUDE    # ./lib-dynload/_tkinter.co
+ 			PATTERN "idlelib" EXCLUDE                   # ./idlelib

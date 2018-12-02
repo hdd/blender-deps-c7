@@ -66,7 +66,11 @@ RUN mkdir $HOME/blender-git/ && \
 # run dependencies build
 RUN cd $HOME/blender-git/blender && make deps
 
+# copy patch folder
+COPY ./patches /tmp/patches
+
 # copy blender build script
 COPY ./build.sh /tmp
+
 RUN chmod +x /tmp/build.sh
 ENTRYPOINT ["/tmp/build.sh"]
