@@ -15,6 +15,16 @@ cmake \
     -DLIBDIR=/opt/blender/lib .. && \
 make -j 4 && make install
 
-cd $HOME/blender-git/blender/buildfolder && \
-cpack -G TGZ .
+# from: https://github.com/mattias-ohlsson/docker-centos-blender-2.8-builder
+
+cd /
+rm -f blender-*.tar.gz
+cpack 
+cpack -G TGZ --config $HOME/blender-git/blender/buildfolder/CPackConfig.cmake
+
+if [ -f blender-*.tar.gz ]; then
+	filename=$(ls blender-*.tar.gz)
+	echo "Use docker cp to copy the package:"
+	echo "  docker cp $HOSTNAME:/$filename ./"
+fi
 
