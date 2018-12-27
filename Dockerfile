@@ -58,7 +58,6 @@ RUN alternatives --install /usr/bin/python3 python3 /bin/python36 20 \
 RUN mkdir $HOME/blender-git/ && \
     git clone https://git.blender.org/blender.git $HOME/blender-git/blender && \
     cd $HOME/blender-git/blender/ && \
-    git checkout blender2.8 &&\
     git submodule update --init --recursive && \
     git submodule foreach git checkout master && \
     git submodule foreach git pull --rebase origin master
