@@ -33,7 +33,10 @@ RUN yum -y install \
     zlib-devel \
     python-setuptools \
     libX11-devel \
-    libXt-devel
+    libXt-devel \
+    alsa-lib-devel \
+    pulseaudio \
+    pulseaudio-libs-devel
 
 RUN alternatives --install /usr/local/bin/cmake cmake /usr/bin/cmake 10 \
 --slave /usr/local/bin/ctest ctest /usr/bin/ctest \
